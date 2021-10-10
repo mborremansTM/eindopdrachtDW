@@ -1,0 +1,19 @@
+body {
+  text-align: center;
+  background-color: cornflowerblue;
+}
+
+.section {
+  margin: 2vw;
+  padding: 2vw;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.win {
+  color: green;
+}
+.lose {
+  color: red;
+}
+
