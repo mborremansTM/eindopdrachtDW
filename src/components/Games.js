@@ -2,30 +2,22 @@ import {Section} from "./Section";
 
 export function Game(props) {
     const {game} = props;
-
-    if (game.result){
-        return <Section>
-            <Color result={game.result}/>
-            <strong>Your champion picked:</strong> {game.champion}
-            &emsp;
-            <strong>Enemy champion picked:</strong> {game.enemy}
-            &emsp;
-            <strong>Damage dealt:</strong> {game.damage}
-            &emsp;
-            <strong>CS:</strong> {game.cs}
-            &emsp;
-            <strong>Kills:</strong> {game.kills}
-            &emsp;
-            <strong>Assists:</strong> {game.assist}
-            &emsp;
-            <strong>Deaths:</strong> {game.death}
-            &emsp;
-            <strong>KDA:</strong> <CountKDA kills={game.kills} deaths={game.death} assists={game.assist}/>
-        </Section>
-    }
-    else return null
-
-
+    return <Section>
+        <Color result={game.result}/>
+        <strong>{game.champion}</strong> vs {game.enemy}
+        <br/>
+        <strong>Damage dealt:</strong> {game.damage}
+        &emsp;
+        <strong>CS:</strong> {game.cs}
+        &emsp;
+        <strong>Kills:</strong> {game.kills}
+        &emsp;
+        <strong>Deaths:</strong> {game.death}
+        &emsp;
+        <strong>Assists:</strong> {game.assist}
+        &emsp;
+        <strong>KDA:</strong> <CountKDA kills={game.kills} deaths={game.death} assists={game.assist}/>
+    </Section>
 }
 
 export function Games(props) {
@@ -46,15 +38,22 @@ function Color(props) {
     if (result === "LOSE") {
         return <h3 className="lose">{result}</h3>
     }
+    else return null;
 }
 
 function CountKDA(props) {
     const {kills, deaths, assists} = props;
-    let kda = kills + assists / deaths;
-
-    function afronden(getal){
-        return Math.round(getal*10)/10
+    let kda;
+    if (deaths === 0) {
+        kda = "Perfect KDA"
+    } else {
+        kda = afronden((kills + assists) / deaths);
     }
 
-    return afronden(kda)
+
+    function afronden(getal) {
+        return Math.round(getal * 10) / 10
+    }
+
+    return kda
 }
