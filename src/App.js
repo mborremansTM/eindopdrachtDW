@@ -1,14 +1,12 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
-import { Games} from "./components/Games";
-import {GAMES} from "./data/data";
+import './App.css'
 import {PROFILE} from "./data/data";
 import {Profile} from "./components/Profile";
-import {Accordion, Col, Container, Row} from "react-bootstrap";
-
-import {ChartDamage} from "./components/ChartDamage";
-import {ChartCs} from "./components/ChartCs";
+import { Col, Container, Row} from "react-bootstrap";
 import {Section} from "./components/Section";
+import {ChartsTab} from "./components/ChartsTab";
+import "./services/firestore";
+import {GamesFromDb} from "./components/GamesFromDb";
 
 function App() {
   return (
@@ -21,18 +19,13 @@ function App() {
           </Row>
           <Row>
               <Col xs={6}>
-                  <Games games={GAMES}/>
+                  <GamesFromDb/>
               </Col>
               <Col>
                   <Section>
-                      <Accordion>
-                          <ChartDamage/>
-                          <ChartCs/>
-                      </Accordion>
+                      <ChartsTab/>
                   </Section>
               </Col>
-
-
           </Row>
       </Container>
 

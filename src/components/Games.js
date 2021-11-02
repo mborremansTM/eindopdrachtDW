@@ -12,11 +12,11 @@ export function Game(props) {
         &emsp;
         <strong>Kills:</strong> {game.kills}
         &emsp;
-        <strong>Deaths:</strong> {game.death}
+        <strong>Deaths:</strong> {game.deaths}
         &emsp;
-        <strong>Assists:</strong> {game.assist}
+        <strong>Assists:</strong> {game.assists}
         &emsp;
-        <strong>KDA:</strong> <CountKDA kills={game.kills} deaths={game.death} assists={game.assist}/>
+        <strong>KDA:</strong> <CountKDA kills={game.kills} deaths={game.deaths} assists={game.assists}/>
     </Section>
 }
 

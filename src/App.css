@@ -5,8 +5,8 @@ body {
 }
 
 .section {
-  margin: 2vw;
-  padding: 2vw;
+  margin: 1vw;
+  padding: 1vw;
   border-radius: 5px;
   background-color: #F4F1DE;
   border: 2px solid #3D405B;
@@ -20,4 +20,30 @@ body {
 }
 .test{
   background-color: #81B29A;
+}
+.navLink{
+  color: #3D405B;
+  border: #3D405B 1px solid;
+  border-radius: 5px;
+  align-content: center;
+}
+.navLink.active{
+  background-color: #3D405B;
+  color: #F4F1DE;
+}
+.navLink.active:hover{
+  color: #F4F1DE;
+}
+.navLink:hover{
+  color: #3D405B;
+}
+.navItem{
+  width: 48%;
+  margin: 1%;
+}
+.chart{
+  margin: 1%;
+}
+.nav{
+  padding: 0;
 }

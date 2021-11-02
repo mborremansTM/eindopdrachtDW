@@ -15,7 +15,7 @@ export const GAMES = [
         champion: "Miss fortune",
         enemy: "Ezreal",
         damage: 5214,
-        cs: 98,
+        cs: 68,
         result: "LOSE",
         kills: 2,
         assist: 2,
@@ -26,8 +26,8 @@ export const GAMES = [
         id: "3",
         champion: "Miss fortune",
         enemy: "Ezreal",
-        damage: 5214,
-        cs: 98,
+        damage: 7982,
+        cs: 187,
         result: "WIN",
         kills: 2,
         assist: 2,
@@ -40,4 +40,4 @@ export const PROFILE =
         nameUser: "mborrema",
         lp: 55,
         rank: "BRONZE 4"
-    }
+    };
