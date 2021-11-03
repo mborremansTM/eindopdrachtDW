@@ -19,12 +19,15 @@ export function ChartDamage(props){
 
 
 
-    return <BarChart className='chart' width={550} height={200} data={gamesFromDb}>
-            <XAxis dataKey="name"  label={{ value: 'Games', position: 'insideBottomRight', offset: 0 }} scale="band" />
+    return <div>
+        <BarChart className='chart' width={550} height={200} data={gamesFromDb}>
+            <XAxis dataKey="id"  label={{ value: 'Games', position: 'insideBottomRight', offset: 0 }} scale="band" />
             <YAxis label={{ value: 'Damage', angle: -90, position: 'insideLeft' }}/>
             <Tooltip/>
             <Bar dataKey="damage" barSize={30} fill="#3D405B"/>
         </BarChart>
+    </div>
+
 
 
 }

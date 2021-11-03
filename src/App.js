@@ -7,6 +7,8 @@ import {Section} from "./components/Section";
 import {ChartsTab} from "./components/ChartsTab";
 import "./services/firestore";
 import {GamesFromDb} from "./components/GamesFromDb";
+import {GamesAddDb} from "./components/GamesAddDb";
+
 
 function App() {
   return (
@@ -26,6 +28,7 @@ function App() {
                       <ChartsTab/>
                   </Section>
               </Col>
+              <GamesAddDb/>
           </Row>
       </Container>
 

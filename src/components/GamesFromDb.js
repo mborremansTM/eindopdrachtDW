@@ -15,6 +15,7 @@ export function GamesFromDb(){
     }, []);
 
     return <div>
+        <button onClick={() => loadGames()}>Load games</button>
         <Games games={gamesFromDb}/>
     </div>;
 }

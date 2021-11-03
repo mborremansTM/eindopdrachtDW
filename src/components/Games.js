@@ -24,7 +24,7 @@ export function Games(props) {
     const {games} = props;
 
     return <div>
-        {games.map(g => <Game key={g.id} game={g}/>)}
+        {games.slice(games.length-10,games.length).map(g => <Game key={g.id} game={g}/>)}
     </div>;
 }
 

@@ -18,7 +18,7 @@ export function ChartCs(props) {
 
 
     return <BarChart width={550} height={200} data={gamesFromDb}>
-            <XAxis dataKey="name" label={{value: 'Games', position: 'insideBottomRight', offset: 0}}
+            <XAxis dataKey="id" label={{value: 'Games', position: 'insideBottomRight', offset: 0}}
                    scale="band"/>
             <YAxis label={{value: 'Cs', angle: -90, position: 'insideLeft'}}/>
             <Tooltip/>
