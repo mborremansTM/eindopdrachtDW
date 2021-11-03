@@ -2,12 +2,12 @@ import {Col, Nav, Row, Tab} from "react-bootstrap";
 import {ChartDamage} from "./ChartDamage";
 import {GAMES} from "../data/data";
 import {ChartCs} from "./ChartCs";
+import {Section} from "./Section";
 
 
 export function ChartsTab(){
-
-
-    return <Tab.Container /*defaultActiveKey="damage"*/>
+    return <Section>
+        <Tab.Container defaultActiveKey="damage">
             <Row>
                 <Nav>
                     <Nav.Item className='navItem'>
@@ -31,5 +31,8 @@ export function ChartsTab(){
                 </Col>
             </Row>
 
-    </Tab.Container>
+        </Tab.Container>
+    </Section>
+
+
 }

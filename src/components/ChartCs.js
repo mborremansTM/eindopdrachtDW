@@ -16,14 +16,19 @@ export function ChartCs(props) {
         loadGames();
     }, []);
 
+    gamesFromDb.sort((gl,gr)=>gl.id - gr.id)
 
-    return <BarChart width={550} height={200} data={gamesFromDb}>
+
+    return <div>
+        <button onClick={() => loadGames()}>Load games</button>
+        <BarChart width={550} height={200} data={gamesFromDb}>
             <XAxis dataKey="id" label={{value: 'Games', position: 'insideBottomRight', offset: 0}}
                    scale="band"/>
             <YAxis label={{value: 'Cs', angle: -90, position: 'insideLeft'}}/>
             <Tooltip/>
             <Bar dataKey="cs" barSize={30} fill="#3D405B"/>
         </BarChart>
+    </div>
 
 }
 

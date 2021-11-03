@@ -24,11 +24,10 @@ function App() {
                   <GamesFromDb/>
               </Col>
               <Col>
-                  <Section>
-                      <ChartsTab/>
-                  </Section>
+                  <GamesAddDb/>
+                  <ChartsTab/>
               </Col>
-              <GamesAddDb/>
+
           </Row>
       </Container>
 

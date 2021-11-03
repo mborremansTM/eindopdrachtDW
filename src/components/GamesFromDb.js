@@ -19,3 +19,4 @@ export function GamesFromDb(){
         <Games games={gamesFromDb}/>
     </div>;
 }
+
