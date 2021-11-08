@@ -10,8 +10,9 @@ import {SectionNewGame} from "./SectionNewGame";
 export function GamesAddDb() {
     const [games, setGames] = useState([]);
 
+
     async function addGames() {
-        await addGamesInDb( games);
+        await addGamesInDb(games);
         console.log(`add ok for ${games}`);
     }
 

@@ -1,5 +1,6 @@
 import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
+import "firebase/auth"
 
 //this is executed when this file is imported
 const firebaseConfig = {
