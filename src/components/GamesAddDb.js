@@ -29,7 +29,9 @@ export function GamesAddDb(props) {
     }
 
     return <Section>
-        <button onClick={() => setIsOpen(!isOpen)}>{isOpen ? "Close" : "New game"} </button>
+        <button onClick={() => {
+            setIsOpen(!isOpen); reset();
+        }}>{isOpen ? "Close" : "New game"} </button>
         <button onClick={loadGames}>Load games</button>
         {isOpen && <div>
             <GamesForm games={games} setGames={setGames} setIsValid={setIsValid}/>
