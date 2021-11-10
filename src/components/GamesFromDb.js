@@ -1,6 +1,8 @@
 import {getGamesFromDb} from "../services/firestoreDatabase";
 import {useEffect, useState} from "react";
+
 import {Games} from "./Games";
+import {GamesAddDb} from "./GamesAddDb";
 
 export function GamesFromDb(){
     const [gamesFromDb, setGamesFromDb] = useState([]);
@@ -15,7 +17,7 @@ export function GamesFromDb(){
     }, []);
 
     return <div>
-        <button onClick={() => loadGames()}>Load games</button>
+        <GamesAddDb setGamesFromDb={setGamesFromDb}/>
         <Games games={gamesFromDb}/>
     </div>;
 }

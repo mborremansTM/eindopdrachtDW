@@ -1,5 +1,5 @@
+/*
 import {addUsersInDb} from "../services/firestoreDatabase";
-import {useState} from "react";
 import firebase from "firebase/compat";
 import {Section} from "./Section";
 
@@ -18,4 +18,4 @@ export function UserAddDb() {
     return <Section>
         <button onClick={() => addUsers(user)}>save as new</button>
     </Section>
-}
+}*/

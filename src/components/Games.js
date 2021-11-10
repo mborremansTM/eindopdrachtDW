@@ -1,38 +1,51 @@
 import {Section} from "./Section";
-import {forEach} from "react-bootstrap/ElementChildren";
-import {loadGames} from "./GamesFromDb";
+import {useState} from "react";
+import {EditGame} from "./EditGame";
+import {deleteGameInDb} from "../services/firestoreDatabase";
+
 
 export function Game(props) {
+    const [edit, setEdit] = useState(false)
+    const [show, setShow] = useState(false)
     const {game} = props;
-    return <Section>
-        <Color result={game.result}/>
-        <strong>{game.champion}</strong> vs {game.enemy}
-        <br/>
-        <strong>Damage dealt:</strong> {game.damage}
-        &emsp;
-        <strong>CS:</strong> {game.cs}
-        &emsp;
-        <strong>Kills:</strong> {game.kills}
-        &emsp;
-        <strong>Deaths:</strong> {game.deaths}
-        &emsp;
-        <strong>Assists:</strong> {game.assists}
-        &emsp;
-        <strong>KDA:</strong> <CountKDA kills={game.kills} deaths={game.deaths} assists={game.assists}/>
-        &emsp;
-        <strong>Time played:</strong> {game.time}
-        &emsp;
-        <strong>LP:</strong> {game.result ==="WIN" ? "+" : "-"}{game.lp}
-    </Section>
+
+    return <div onClick={() => setShow(!show)}>
+        <Section>
+
+            {!edit && <div>
+
+                <Color result={game.result}/>
+                <strong>{game.champion}</strong> vs {game.enemy}
+                {show && <div>
+                    <button className="editButton" onClick={() => setEdit(!edit)}>{edit ? "Close" : "Edit"}</button>
+                    <br/>
+                    <strong>Damage dealt:</strong> {game.damage}
+                    &emsp;
+                    <strong>CS:</strong> {game.cs}
+                    &emsp;
+                    <strong>Kills:</strong> {game.kills}
+                    &emsp;
+                    <strong>Deaths:</strong> {game.deaths}
+                    &emsp;
+                    <strong>Assists:</strong> {game.assists}
+                    &emsp;
+                    <strong>KDA:</strong> <CountKDA kills={game.kills} deaths={game.deaths} assists={game.assists}/>
+                    &emsp;
+                    <strong>LP:</strong> {game.result === "WIN" ? "+" : "-"}{game.lp}
+                </div>}
+            </div>}
+            {edit && <EditGame gameId={game.id} gameInDb={game} edit={edit} setEdit={setEdit}/>}
+        </Section>
+    </div>
 }
+
 
 export function Games(props) {
     const {games} = props;
-    games.sort((gl,gr)=>gr.id - gl.id)
+    games.sort((gl, gr) => gr.id - gl.id)
 
     return <div>
-        <Winrate games={games}/>
-        {games.slice(0,10).map(g => <Game key={g.id} game={g}/>)}
+        {games.slice(0, 10).map(g => <Game key={g.id} game={g}/>)}
     </div>;
 }
 
@@ -45,8 +58,7 @@ function Color(props) {
     }
     if (result === "LOSE") {
         return <h3 className="lose">{result}</h3>
-    }
-    else return null;
+    } else return null;
 }
 
 function CountKDA(props) {
@@ -60,29 +72,6 @@ function CountKDA(props) {
     return kda
 }
 
-export function Winrate(props){
-    const {games} = props;
-    let win = 0;
-    let lose = 0;
-
-    games.map(game => {
-        if (game.result === "WIN"){
-            win++;
-        }
-        if (game.result === "LOSE"){
-            lose++;
-        }
-    })
-
-    let winrate = afronden(win/games.length*100);
-    return <Section>
-        <p>{win} wins</p>
-        <p>{lose} lose</p>
-        <p>{winrate} winrate</p>
-
-    </Section>
-}
-
-function afronden(getal) {
+export function afronden(getal) {
     return Math.round(getal * 10) / 10
 }

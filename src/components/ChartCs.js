@@ -19,7 +19,7 @@ export function ChartCs(props) {
     gamesFromDb.sort((gl,gr)=>gl.id - gr.id)
 
 
-    return <div>
+    return <div className="chartBox">
         <button onClick={() => loadGames()}>Load games</button>
         <BarChart width={550} height={200} data={gamesFromDb}>
             <XAxis dataKey="id" label={{value: 'Games', position: 'insideBottomRight', offset: 0}}

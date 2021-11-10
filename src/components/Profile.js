@@ -1,16 +1,11 @@
-import {Section} from "./Section";
-import {Counters} from "./Counters";
-
 export function Profile(props){
     const {profile} = props;
 
-    return <Section>
-        <strong>Username:</strong> {profile.nameUser}
+
+    return <div>
+        <strong>Username:</strong> <span>{profile.username}</span>
         &emsp;
-        <strong>League Points:</strong> {profile.lp} lp
+        <strong>Rank:</strong> <span>{profile.rank}</span>
         &emsp;
-        <strong>Rank:</strong> {profile.rank}
-        &emsp;
-        <Counters/>
-    </Section>
+    </div>
 }
