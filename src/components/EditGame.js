@@ -34,19 +34,19 @@ export function EditGame(props){
             Enemy champion: <input onChange={e => setGame({...game, enemy: e.target.value})} className="form-control"
                                    placeholder={gameInDb.enemy}/>
             <br/>
-            Kills: <input type="number" onChange={e => setGame({...game, kills: parseInt(e.target.value)})}
+            Kills: <input type="number" min="0" onChange={e => setGame({...game, kills: parseInt(e.target.value)})}
                           className="form-control" placeholder={gameInDb.kills}/>
             <br/>
-            Deaths: <input type="number" onChange={e => setGame({...game, deaths: parseInt(e.target.value)})}
+            Deaths: <input type="number" min="0" onChange={e => setGame({...game, deaths: parseInt(e.target.value)})}
                            className="form-control" placeholder={gameInDb.deaths}/>
             <br/>
-            Assists: <input type="number" onChange={e => setGame({...game, assists: parseInt(e.target.value)})}
+            Assists: <input type="number" min="0" onChange={e => setGame({...game, assists: parseInt(e.target.value)})}
                             className="form-control" placeholder={gameInDb.assists}/>
             <br/>
-            Cs: <input type="number" onChange={e => setGame({...game, cs: parseInt(e.target.value)})}
+            Cs: <input type="number" min="0" onChange={e => setGame({...game, cs: parseInt(e.target.value)})}
                        className="form-control" placeholder={gameInDb.cs}/>
             <br/>
-            Damage: <input type="number" onChange={e => setGame({...game, damage: parseInt(e.target.value)})}
+            Damage: <input type="number" min="0" onChange={e => setGame({...game, damage: parseInt(e.target.value)})}
                            className="form-control" placeholder={gameInDb.damage}/>
             <br/>
             Game result: <select onChange={e => setGame({...game, result: e.target.value})}

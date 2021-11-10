@@ -37,7 +37,7 @@ export function GamesAddDb(props) {
                 addGames(games); setIsOpen(false); setIsValid(false); reset();
             }}>Save as new</button>
             }
-            {!isValid && <Alert className="mt-2" variant={"danger"}>Make sure all fields are field in</Alert>}
+            {!isValid && <Alert className="mt-2" variant={"danger"}>Make sure all fields are field in correctly</Alert>}
         </div>}
     </Section>
 }
