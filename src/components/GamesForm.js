@@ -55,7 +55,7 @@ export function GamesForm(props) {
         </select>
             <br/>
             Lp: <input type="number" onChange={e => setGames({...games, lp: parseInt(e.target.value)})}
-                           className="form-control" placeholder="0"/>
+                           className="form-control" min="0" placeholder="0"/>
 
         </form>
     </div>

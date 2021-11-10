@@ -56,7 +56,7 @@ export function EditGame(props){
             <option value="LOSE">Lose</option>
         </select>
             <br/>
-            Lp: <input type="number" onChange={e => setGame({...game, lp: parseInt(e.target.value)})}
+            Lp: <input type="number" min="0" onChange={e => setGame({...game, lp: parseInt(e.target.value)})}
                        className="form-control" placeholder={gameInDb.lp}/>
         </form>
         {isValid && <button onClick={update}>update</button>}
