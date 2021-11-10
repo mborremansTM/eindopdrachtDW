@@ -1,7 +1,7 @@
 import {Section} from "./Section";
 import {useState} from "react";
 import {EditGame} from "./EditGame";
-import {deleteGameInDb} from "../services/firestoreDatabase";
+
 
 
 export function Game(props) {
